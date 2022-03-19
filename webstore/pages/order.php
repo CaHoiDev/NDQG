@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
 
 <form action="">
             <label for="bdaymonth">Select (month and year):</label>
@@ -19,6 +20,17 @@
             </div>
             <input type="submit">
         </form>
+=======
+<table>
+    <tr>
+        <th>To package</th>
+        <th>In transit</th>
+        <th>Delivery</th>
+    </tr>
+</table>
+<button type="button">Go Back </button>
+
+>>>>>>> 462d5e5f7aa7b1babb5dcde7cc451a5ba5c46fba
 
 </body>
 <script src="/assets/javascript/app.js"></script>
