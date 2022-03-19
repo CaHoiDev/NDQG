@@ -9,7 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-
+<table>
+    <tr>
+        <th>Stt</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Price</th>
+    </tr>
+</table>
 
 
 </body>
