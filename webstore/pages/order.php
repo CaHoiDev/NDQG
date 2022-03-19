@@ -9,7 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-
+<table>
+    <tr>
+        <th>To package</th>
+        <th>In transit</th>
+        <th>Delivery</th>
+    </tr>
+</table>
+<button type="button">Go Back </button>
 
 
 </body>
