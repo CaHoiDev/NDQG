@@ -12,6 +12,7 @@
 <body>
 
 <div class="container">
+
         <nav class="navbar background">
             <ul class="nav-list">
                 <div class="logo">
@@ -45,8 +46,6 @@
                     <option value="spider">10000000 --> 20000000</option>
                     <option value="goldfish">> 25000000</option>
                 </select>
-
-
                 </div>
                 <input type="submit" class="P-sm">
             </form>
