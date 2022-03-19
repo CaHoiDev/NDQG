@@ -19,10 +19,10 @@
                     <img src="https://mythuat24h.com/wp-content/uploads/2019/03/thiet-ke-logo-quan-1.jpg">
                 </div>
                 <li><a href="">HOME PAGE</a></li>
-                <li><a href="">ORDER STATUS</a>
+                <li><a href="./pages/order.php">ORDER STATUS</a>
                 </li>
-                <li><a href="">ORDER HISTORY</a></li>
-                <li><a href=""><i class="fa fa-shopping-cart" style="font-size:48px;color:rgb(239, 247, 246)"></i></a></li>
+                <li><a href="./pages/order-history.php">ORDER HISTORY</a></li>
+                <li><a href="./pages/purchase.php"><i class="fa fa-shopping-cart" style="font-size:48px;color:rgb(239, 247, 246)"></i></a></li>
             </ul>
                 <hr>
             <div class="rightNav">
