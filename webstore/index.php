@@ -18,11 +18,12 @@
                     <img src="https://mythuat24h.com/wp-content/uploads/2019/03/thiet-ke-logo-quan-1.jpg">
                 </div>
                 <li><a href="">HOME PAGE</a></li>
-                <li><a href="">ORDER STATUS</a></li>
+                <li><a href="">ORDER STATUS</a>
+                </li>
                 <li><a href="">ORDER HISTORY</a></li>
                 <li><a href=""><i class="fa fa-shopping-cart" style="font-size:48px;color:rgb(239, 247, 246)"></i></a></li>
             </ul>
-
+                <hr>
             <div class="rightNav">
                 <input type="text" name="search" id="search">
                 <a class="search-button" type="submit" href="">
@@ -35,8 +36,16 @@
                 <label for="bdaymonth">Select (month and year):</label>
                 <input type="month" id="bdaymonth" name="bdaymonth">
                 <div>
-                    <label for="volume">Money</label>
-                    <input type="range" id="money" name="money" min="500000" max="200000000">
+                <select name="pets" id="pet-select">
+                    <option value="">--Money--</option>
+                    <option value="dog">0 --> 500000</option>
+                    <option value="cat">500000 --> 1000000</option>
+                    <option value="hamster">1000000 --> 5000000</option>
+                    <option value="parrot">5000000 --> 10000000</option>
+                    <option value="spider">10000000 --> 20000000</option>
+                    <option value="goldfish">> 25000000</option>
+                </select>
+
 
                 </div>
                 <input type="submit" class="P-sm">
