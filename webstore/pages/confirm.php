@@ -59,7 +59,7 @@
             </div>
             <div class="backOrProceed">
                 <div class="flex-end">
-                    <button><a href="http://" target="_blank" rel="noopener noreferrer"></a> Back </button>
+                    <button><a href="./purchase.php" target="_blank" rel="noopener noreferrer"> Back </a></button>
                     <button><a href="http://" target="_blank" rel="noopener noreferrer"></a> Proceed</button>
                 </div>
             </div>
