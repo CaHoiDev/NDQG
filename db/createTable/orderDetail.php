@@ -3,7 +3,7 @@ CREATE TABLE orderDetail (
     productId UNIQUE  INT NOT NULL
     );
 
-    ALTER TABLE orderDetail ADD FOREIGN KEY (orderId ) REFERENCES order (orderId );
+    ALTER TABLE orderDetail ADD FOREIGN KEY (orderId ) REFERENCES orders (orderId );
     INSERT INTO `order` (`orderId`, `userId`) VALUES (' ',  '1');
   
 
