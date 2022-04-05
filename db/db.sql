@@ -1,5 +1,5 @@
 -- Phuong:
-  CREATE TABLE `User`(
+  CREATE TABLE `user`(
        userId  int auto_increment PRIMARY KEY,
         userName text not null,
         userGender enum('male', 'female','other'),
@@ -15,9 +15,9 @@
         detail varchar(50) 
         );
 
-   ALTER TABLE `Address`ADD CONSTRAINT fk_Address_userId FOREIGN KEY (userId) REFERENCES `User` (userId);
+   ALTER TABLE `Address`ADD CONSTRAINT fk_Address_userId FOREIGN KEY (userId) REFERENCES `user` (userId);
 
-     INSERT INTO `User`
+     INSERT INTO `user`
      VALUES
     ('1','Nguyen Van A','male','03959608','anguyen@gmail.com'),
     ('2','Nguyen Thi B','male','03959608','bnguyen@gmail.com');;  
