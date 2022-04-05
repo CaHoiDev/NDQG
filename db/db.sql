@@ -79,3 +79,39 @@ REFERENCES `user` (userId  );
 Insert into `reply`(replyId, commentId, userId,replyContent,timeReply )
 values(1,1,1,'Cảm ơn quý khách'),
 (2,2,2,'Cảm ơn quý khách  nha');
+
+--Duyệt
+
+--create table Product, ProductLove
+Create table `Product`(
+        productId INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        productName text not null,
+        isSelf boolean not null,
+        productPrice decimal(10,2),
+        productImage text not null,
+        productDayPublication date not null
+        );
+
+create table `ProductLove`( 
+        productId varchar(5),
+        userId varchar(10)
+        );
+
+--khóa ngoại
+ALTER TABLE ProductLove CONSTRAINT fk_ProductLove FOREIGN KEY (userId)
+     REFERENCES User (userId);
+
+ALTER TABLE ProductLove CONSTRAINT fk_ProductLove FOREIGN KEY (productId)
+     REFERENCES Product (productId); 
+
+-- Insert data
+Insert Into `ProductLove`( ‘productId’, ‘userId’)
+    VALUES
+    (‘SP01’, ‘US01’),
+    (‘SP02’, ‘US02’),
+    (‘SP03’, ‘US03’);
+Insert into `Product` (productId ,productName, isSelf ,productPrice,
+       productImage, productDayPublication )
+       values(‘SP01’,'Tranh 1','ban','2000000', 'anh.jpg' ,'2022/03/22'),
+       (‘SP02’,'Tranh 2','ban','800000','anh2.jpg','2022/03/28'),
+       (‘SP03’,'Tranh 3','khong ban','1800000','anh3.jpg','2022/04/23');
