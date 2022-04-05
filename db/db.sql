@@ -43,9 +43,6 @@ CREATE TABLE orderDetail (
     create table comment(
 commentId int AUTO_INCREMENT,
 productId int not null,
-CONSTRAINT fk_product
-FOREIGN KEY (productId )
-REFERENCES product (productId),
 userId int not null,
 commentContent text  not null,
 timeCmt datetime default now()
