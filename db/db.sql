@@ -17,6 +17,15 @@
 
    ALTER TABLE `Address`ADD CONSTRAINT fk_Address_userId FOREIGN KEY (userId) REFERENCES `User` (userId);
 
+     INSERT INTO `Users`
+     VALUES
+    ('1','Nguyen Van A','male','03959608','anguyen@gmail.com'),
+    ('2','Nguyen Thi B','male','03959608','bnguyen@gmail.com');;  
+
+
+        INSERT INTO  `Address`
+        VALUES ('1','Da Nang','Son Tra','Phuoc My','abc'),
+               ('2','Da Nang','Son Tra','An Hai Dong','abc');
 
 -- Tien:
 CREATE TABLE `order`(
