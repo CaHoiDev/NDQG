@@ -1,3 +1,6 @@
+drop database NDQG;
+create database NDQG;
+use NDQG;
 -- Phuong:
   CREATE TABLE `user`(
        userId  int auto_increment PRIMARY KEY,
@@ -20,7 +23,7 @@
      INSERT INTO `user`
      VALUES
     ('1','Nguyen Van A','male','03959608','anguyen@gmail.com'),
-    ('2','Nguyen Thi B','male','03959608','bnguyen@gmail.com');;  
+    ('2','Nguyen Thi B','male','03959608','bnguyen@gmail.com'); 
 
 
         INSERT INTO  `Address`
@@ -39,9 +42,42 @@ CREATE TABLE orderDetail (
     
      ALTER TABLE orderDetail ADD FOREIGN KEY (orderId ) REFERENCES `order` (orderId );
      ALTER TABLE `order`  ADD FOREIGN KEY (userId ) REFERENCES user (userId );
+     Create table `product`(
+        productId int AUTO_INCREMENT PRIMARY KEY,
+        productName text not null,
+        isSelf boolean not null,
+        productPrice decimal(10,2),
+        productImage text not null,
+        productDayPublication date not null
+        );
+
+create table `productLove`( 
+        productId int,
+        userId int
+        );
+
+
+ALTER TABLE `productLove` ADD CONSTRAINT fk_ProductLove1 FOREIGN KEY (userId)
+     REFERENCES User (userId);
+
+ALTER TABLE `productLove` ADD CONSTRAINT fk_ProductLove2 FOREIGN KEY (productId)
+     REFERENCES Product (productId); 
+
+-- Insert data
+Insert Into `productLove`( productId, userId)
+    VALUES
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3');
+Insert into `product` (productId ,productName, isSelf ,productPrice,
+       productImage, productDayPublication )
+       values('1','Tranh 1','ban','2000000', '' ,'2022/03/22'),
+       ('2','Tranh 2','ban','800000','','2022/03/28'),
+       ('3','Tranh 3','khong ban','1800000','','2022/04/23');
+
 ---- Dieu: 
     create table comment(
-commentId int AUTO_INCREMENT,
+commentId int AUTO_INCREMENT primary key, 
 productId int not null,
 userId int not null,
 commentContent text  not null,
@@ -54,24 +90,21 @@ REFERENCES `user` (userId);
 
 ALTER TABLE `comment` ADD CONSTRAINT fk_product 
 FOREIGN KEY (productId )
-REFERENCES `product` (productId );
+REFERENCES `product` (productId);
 ----- khóa chính ------
-ALTER TABLE `comment`
-ADD CONSTRAINT comment_pk PRIMARY KEY (commentId);
+
 ---- insert dữ liệu vào ---- 
 Insert into `comment`(commentId,productId,userId,commentContent,timeCmt )
 values(1,1,1,'tranh dep lam','2022/04/05'),
-(1,1,1,'tranh dep lam nè','2022/04/06');
+(2,2,2,'tranh dep lam nè','2022/04/06');
 create table `reply`(
-    replyId int AUTO_INCREMENT,
+    replyId int AUTO_INCREMENT primary key,
     commentId int not null,
     userId int not null,
     replyContent text not null,
     timeReply datetime default now()
 );
------ khóa chính -----
-ALTER TABLE `reply`
-ADD CONSTRAINT reply_pk PRIMARY KEY (replyId );
+
 ----- khóa ngoại -----
 
 ALTER TABLE `reply` ADD CONSTRAINT fk_reply 
@@ -83,41 +116,9 @@ FOREIGN KEY (userId  )
 REFERENCES `user` (userId  );
 
 Insert into `reply`(replyId, commentId, userId,replyContent,timeReply )
-values(1,1,1,'Cảm ơn quý khách'),
-(2,2,2,'Cảm ơn quý khách  nha');
+values(1,1,1,'Cảm ơn quý khách',2022/04/05),
+(2,2,2,'Cảm ơn quý khách  nha','2022/04/06');
 
---Duyệt
 
---create table Product, ProductLove
-Create table `Product`(
-        productId INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        productName text not null,
-        isSelf boolean not null,
-        productPrice decimal(10,2),
-        productImage text not null,
-        productDayPublication date not null
-        );
 
-create table `ProductLove`( 
-        productId varchar(5),
-        userId varchar(10)
-        );
 
---khóa ngoại
-ALTER TABLE ProductLove ADD CONSTRAINT fk_ProductLove FOREIGN KEY (userId)
-     REFERENCES User (userId);
-
-ALTER TABLE ProductLove ADD CONSTRAINT fk_ProductLove FOREIGN KEY (productId)
-     REFERENCES Product (productId); 
-
--- Insert data
-Insert Into `ProductLove`( 'productId', 'userId')
-    VALUES
-    ('1', '1'),
-    ('2', '2'),
-    ('3', '3');
-Insert into `Product` (productId ,productName, isSelf ,productPrice,
-       productImage, productDayPublication )
-       values('1','Tranh 1','ban','2000000', 'anh.jpg' ,'2022/03/22'),
-       ('2','Tranh 2','ban','800000','anh2.jpg','2022/03/28'),
-       ('3','Tranh 3','khong ban','1800000','anh3.jpg','2022/04/23');
