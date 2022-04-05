@@ -114,13 +114,13 @@ ALTER TABLE ProductLove CONSTRAINT fk_ProductLove FOREIGN KEY (productId)
      REFERENCES Product (productId); 
 
 -- Insert data
-Insert Into `ProductLove`( ‘productId’, ‘userId’)
+Insert Into `ProductLove`( productId, userId)
     VALUES
-    (‘SP01’, ‘US01’),
-    (‘SP02’, ‘US02’),
-    (‘SP03’, ‘US03’);
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3');
 Insert into `Product` (productId ,productName, isSelf ,productPrice,
        productImage, productDayPublication )
-       values(‘SP01’,'Tranh 1','ban','2000000', 'anh.jpg' ,'2022/03/22'),
-       (‘SP02’,'Tranh 2','ban','800000','anh2.jpg','2022/03/28'),
-       (‘SP03’,'Tranh 3','khong ban','1800000','anh3.jpg','2022/04/23');
+       values('1','Tranh 1','ban','2000000', 'anh.jpg' ,'2022/03/22'),
+       ('2','Tranh 2','ban','800000','anh2.jpg','2022/03/28'),
+       ('3','Tranh 3','khong ban','1800000','anh3.jpg','2022/04/23');
