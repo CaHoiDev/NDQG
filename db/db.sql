@@ -230,19 +230,16 @@ CREATE TABLE orderDetail (
     create table comment(
 commentId int AUTO_INCREMENT,
 productId int not null,
-CONSTRAINT fk_product
-FOREIGN KEY (productId )
-REFERENCES product (productId),
 userId int not null,
 commentContent text  not null,
 timeCmt datetime default now()
 );
 ------- khóa ngoại-------
-ALTER TABLE `comment` CONSTRAINT fk_comment
+ALTER TABLE `comment` CONSTRAINT fk_comment ADD
 FOREIGN KEY (userId )
 REFERENCES `user` (userId);
 
-ALTER TABLE `comment` CONSTRAINT fk_product
+ALTER TABLE `comment` CONSTRAINT fk_product ADD
 FOREIGN KEY (productId )
 REFERENCES `product` (productId );
 ----- khóa chính ------
@@ -264,11 +261,11 @@ ALTER TABLE `reply`
 ADD CONSTRAINT reply_pk PRIMARY KEY (replyId );
 ----- khóa ngoại -----
 
-ALTER TABLE `reply` CONSTRAINT fk_reply
+ALTER TABLE `reply` CONSTRAINT fk_reply ADD
 FOREIGN KEY (commentId)
 REFERENCES `comment` (commentId);
 
-ALTER TABLE `reply` CONSTRAINT fk_reply 
+ALTER TABLE `reply` CONSTRAINT fk_reply  ADD
 FOREIGN KEY (userId  )
 REFERENCES `user` (userId  );
 
