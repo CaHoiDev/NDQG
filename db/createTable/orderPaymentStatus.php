@@ -6,6 +6,7 @@ CREATE TABLE orderpaymentStatus (
 ALTER TABLE paymentStatus
 ADD FOREIGN KEY (paymentMethodID ) REFERENCES paymentMethod(paymentMethodID);
 
+
 INSERT INTO paymentMethod
 VALUES 
 ("1", "Tiền mặt"),
