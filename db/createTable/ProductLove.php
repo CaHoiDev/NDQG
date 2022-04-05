@@ -11,7 +11,7 @@
        echo "Error creating table: " . $conn->error;
      }
      $sql="ALTER TABLE ProductLove CONSTRAINT fk_ProductLove FOREIGN KEY (userId)
-     REFERENCES User (userId))";
+     REFERENCES User (userId)";
      
         
 ?>

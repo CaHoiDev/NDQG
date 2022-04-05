@@ -4,6 +4,6 @@ CREATE TABLE orderDetail (
     );
 
     ALTER TABLE orderDetail ADD FOREIGN KEY (orderId ) REFERENCES orders (orderId );
-    INSERT INTO `order` (`orderId`, `userId`) VALUES (' ',  '1');
+    INSERT INTO `orders` (`orderId`, `userId`) VALUES (' ',  '1');
   
 
