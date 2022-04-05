@@ -2,14 +2,15 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "";
+$database = "conqua";
 
-   // Create connection
-    $conn= mysqli_connect($host,$user,$password,$database);
-    mysqli_set_charset($conn,'UTF8');
+// Create connection
+$conn = new mysqli($host, $user,$password, $database);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
-    // Check connection
-    if(!$conn){
-        die("Connection failed: ".mysqli_connect_error());
-    }else echo "Connected successfully";
+$conn->close();
+
 ?>
