@@ -10,47 +10,61 @@
     <title>WEBSTORE</title>
 </head>
 <body>
-
-<div class="container">
-
-        <nav class="navbar background">
+<header>
+<nav class="navbar">
             <ul class="nav-list">
-                <div class="logo">
-                    <img src="https://mythuat24h.com/wp-content/uploads/2019/03/thiet-ke-logo-quan-1.jpg">
-                </div>
+                
                 <li><a href="">HOME PAGE</a></li>
                 <li><a href="./pages/order.php">ORDER STATUS</a>
                 </li>
                 <li><a href="./pages/order-history.php">ORDER HISTORY</a></li>
-                <li><a href="./pages/purchase.php"><i class="fa fa-shopping-cart" style="font-size:48px;color:rgb(239, 247, 246)"></i></a></li>
+                <li><a href="./pages/abc.php">NL &#8214; EN</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"> <i class="fa fa-search"></i></a>
+                    <div class="dropdown-content">
+                    <a href="#">
+                    <form action="">
+                        <input type="text" placeholder="Search.." name="search" class="search">
+                        <button type="submit" class="search"><i class="fa fa-search"></i></button>
+                    </form>
+                    </a>
+                    <a href="#">
+                        <form action="" class="P-date">
+                            <label for="bdaymonth">Select (month and year):</label>
+                            <input type="month" id="bdaymonth" name="bdaymonth">
+                            <div>
+                            <select name="pets" id="P-money">
+                                <option value="">--Money--</option>
+                                <option value="dog">0 --> 500000</option>
+                                <option value="cat">500000 --> 1000000</option>
+                                <option value="hamster">1000000 --> 5000000</option>
+                                <option value="parrot">5000000 --> 10000000</option>
+                                <option value="spider">10000000 --> 20000000</option>
+                                <option value="goldfish"> > 25000000</option>
+                            </select>
+                            </div>
+                        <input type="submit" class="P-sm">
+                     </form>
+                    </a>                    
+                </div>
+            </li>
+            <li><a href="./pages/abc.php"><i class="fa fa-shopping-cart" style="font-size:24px"></i></a></li>
             </ul>
                 <hr>
             <div class="rightNav">
-                <input type="text" name="search" id="search">
-                <a class="search-button" type="submit" href="">
-                    <i class="fa fa-search"></i>
-                </a>
-            </div>
-        </nav>
-        <hr>
-        <form action="" class="P-p">
-                <label for="bdaymonth">Select (month and year):</label>
-                <input type="month" id="bdaymonth" name="bdaymonth">
-                <div>
-                <select name="pets" id="pet-select">
-                    <option value="">--Money--</option>
-                    <option value="dog">0 --> 500000</option>
-                    <option value="cat">500000 --> 1000000</option>
-                    <option value="hamster">1000000 --> 5000000</option>
-                    <option value="parrot">5000000 --> 10000000</option>
-                    <option value="spider">10000000 --> 20000000</option>
-                    <option value="goldfish">> 25000000</option>
-                </select>
+                <div class="logo">
+                    <p id="text">I love you <br>MUSEUM</p>
                 </div>
-                <input type="submit" class="P-sm">
-            </form>
-    </div>
+            </div>
+        </nav>  
+</header>
+<hr>
+<div class="container">
+            <div class="show-product">
 
+            </div>
+    </div>
+<footer></footer>
 </body>
 <script src="/assets/javascript/app.js"></script>
 </html>
