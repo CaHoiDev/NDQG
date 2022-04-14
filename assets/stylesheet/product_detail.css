@@ -1,0 +1,104 @@
+.pro-detail {
+    margin: 50px;
+    width: 100%;
+}
+
+#pro-detail_flex {
+    display: flex;
+    gap: 50px;
+}
+
+#img1 {
+    width: 500px;
+    height: auto;
+}
+
+#flexText {
+    display: flex;
+    width: 900px;
+    gap: 50px;
+}
+
+#userComment,
+#emailComment {
+    width: 400px;
+}
+
+#comment1 {
+    width: 900px;
+}
+
+#stars {
+    display: flex;
+    gap: 30px;
+}
+
+#payment {
+    display: flex;
+    gap: 20px;
+}
+
+#img2 {
+    width: auto;
+    height: 30px;
+}
+
+
+/* mobile and tablet */
+
+@media only screen and (Max-width:63.9375em) {
+    .pro-detail {
+        margin: 50px;
+        width: 100%;
+    }
+    #pro-detail_flex {
+        flex-direction: column;
+    }
+    #payment_methods {
+        display: none;
+    }
+    #img1 {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* mobile : width <750px */
+
+@media only screen and (Max-width:46.1875em) {
+    #comment1 {
+        width: 800px;
+    }
+    #flexText {
+        flex-direction: column;
+    }
+    #userComment,
+    #emailComment {
+        width: 800px;
+    }
+    #stars {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+
+/* Tablet : width >= 740px and with < 1024*/
+
+@media only screen and (min-width:46.25em) and (max-width:63.9375em) {
+    #comment1 {
+        width: 800px;
+    }
+    #flexText {
+        flex-direction: column;
+    }
+    #userComment,
+    #emailComment {
+        width: 800px;
+    }
+    #stars {
+        display: flex;
+        gap: 30px;
+    }
+}
