@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
 
@@ -75,7 +71,7 @@
     <!-- Le Page Specific Codes
     ================================================== -->
 
-
+    <link rel="shortcut icon" href="ico/favicon.ico">
     <!-- Le Favicons
 	================================================== -->
     <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-touch-icon.png">
@@ -99,7 +95,7 @@
             <div class="topbar">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-5 hidden-xs">
+                        <div class="col-md-4 hidden-xs">
                             <div class="logo">
                                 <a href="/">
                                     <span class="logo-emblem"><img src="https://bootadmin.org/images/boot.png" alt="BA" /></span>
@@ -110,7 +106,13 @@
                                 <i class="feather icon-menu"></i>
                             </a>
                         </div>
-                        <div class="col-md-7 text-right">
+                        <div id="Search" class="col-md-4 text-right ">
+                            <form class="form-inline mr-auto">
+                                <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search..." aria-label="Search">
+                                <button onclick="Search()" class="btn btn-unique btn-rounded btn-sm my-0" type=""> <i class="fas fa-search" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                        <div class="col-md-4 text-right">
                             <ul>
                                 <!-- Profile Menu -->
                                 <li class="btn-group user-account">
@@ -160,6 +162,7 @@
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -265,7 +268,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link wave-effect" onclick="addProducts()">
                                         <i class="feather icon-layout"></i>
-                                        <span class="menu-title">Add new products</span>
+                                        <span class="menu-title">Product Management</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -277,158 +280,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link wave-effect collapsed" data-parent="#sidebarCookie" data-toggle="collapse" href="#navPageLayouts" aria-expanded="false" aria-controls="page-layouts">
-                            <i class="feather icon-sidebar"></i>
-                            <span class="menu-title">Page Layouts</span>
-                            <i class="feather icon-chevron-down down-arrow"></i>
-                        </a>
-                        <div class="collapse" id="navPageLayouts">
-                            <ul class="flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/">
-                                        <i class="feather icon-layout"></i>
-                                        <span class="menu-title">Default</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/boxed">
-                                        <i class="feather icon-bold"></i>
-                                        <span class="menu-title">Boxed</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/horizontal">
-                                        <i class="feather icon-pause"></i>
-                                        <span class="menu-title">Horizontal Menu</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/boxedhorizontal">
-                                        <i class="feather icon-copy"></i>
-                                        <span class="menu-title">Boxed &amp; Horizontal</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link wave-effect collapsed" data-parent="#sidebarCookie" data-toggle="collapse" href="#navElements" aria-expanded="false" aria-controls="page-elements">
-                            <i class="feather icon-layout"></i>
-                            <span class="menu-title">Elements</span>
-                            <i class="feather icon-chevron-down down-arrow"></i>
-                        </a>
-                        <div class="collapse" id="navElements">
-                            <ul class="flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/elements/bootstrap">
-                                        <i class="feather icon-bold"></i>
-                                        <span class="menu-title">Bootstrap</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/elements/gallery">
-                                        <i class="feather icon-image"></i>
-                                        <span class="menu-title">Gallery</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/elements/cards">
-                                        <i class="feather icon-credit-card"></i>
-                                        <span class="menu-title">Cards</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/elements/grid">
-                                        <i class="feather icon-grid"></i>
-                                        <span class="menu-title">Grid</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="title">
-                        <i class="feather icon-more-horizontal"></i>
-                        <span class="menu-title">App Features</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link wave-effect collapsed" data-parent="#sidebarCookie" data-toggle="collapse" href="#navMailbox" aria-expanded="false" aria-controls="page-mailbox">
-                            <i class="feather icon-mail"></i>
-                            <span class="menu-title">Mailbox</span>
-                            <i class="feather icon-chevron-down down-arrow"></i>
-                        </a>
-                        <div class="collapse" id="navMailbox">
-                            <ul class="flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/app/inbox">
-                                        <i class="feather icon-inbox"></i>
-                                        <span class="menu-title">Inbox</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/app/inbox/email">
-                                        <i class="feather icon-mail"></i>
-                                        <span class="menu-title">Email</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/app/inbox/compose">
-                                        <i class="feather icon-send"></i>
-                                        <span class="menu-title">Compose</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="http://bootadmin.org/app/calendar" class="nav-link wave-effect nav-single">
-                            <i class="feather icon-calendar"></i>
-                            <span class="menu-title">Calendar</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link wave-effect collapsed" data-parent="#sidebarCookie" data-toggle="collapse" href="#navProfilebox" aria-expanded="false" aria-controls="page-profilebox">
-                            <i class="feather icon-users"></i>
-                            <span class="menu-title">Account</span>
-                            <i class="feather icon-chevron-down down-arrow"></i>
-                        </a>
-                        <div class="collapse" id="navProfilebox">
-                            <ul class="flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/account/profile">
-                                        <i class="feather icon-user"></i>
-                                        <span class="menu-title">Profile</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/account/billing">
-                                        <i class="feather icon-dollar-sign"></i>
-                                        <span class="menu-title">Billing</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link wave-effect" href="http://bootadmin.org/account/settings">
-                                        <i class="feather icon-settings"></i>
-                                        <span class="menu-title">Settings</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="title">
-                        <i class="feather icon-more-horizontal"></i>
-                        <span class="menu-title">Misc</span>
-                    </li>
-                    <li class="nav-item">
-                        <a href="http://bootadmin.org/credits" class="nav-link wave-effect nav-single">
-                            <i class="feather icon-zap"></i>
-                            <span class="menu-title">Credits</span>
-                        </a>
-                    </li>
-                    <li class="spacer"></li>
-                    <li class="button-container">
-                        <a href="https://github.com/iamshipon1988/bootadmin" class="btn btn-primary display-block"><i class="feather icon-download"></i> Download on Github</a>
-                    </li>
+
                 </ul>
             </div>
 
@@ -444,16 +296,68 @@
                                 </ol>
                             </nav>
                         </div>
-                        <div class="col-6">
-                            <div class="text-right">
-                                <small>Users</small>
-                                <h5 class="text-info">3,458</h5>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
+                <!-- slides -->
+                <div class="slider">
+                    <div class="slides">
+                        <!--button start  -->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <!--button end  -->
+                        <!-- slider img statr -->
+                        <div class="slide first">
+                            <!-- <h2 class="text">SAIGONTOURIST GROUP TỔ CHỨC TOUR ĐƯỜNG THỦY ĐẦU TIÊN GIAI ĐOẠN PHỤC HỒI DU LỊCH TP.HCM</h2>
+                <h6 class="text1">Ngày 24/10/2021 vừa qua, Tổng Công ty Du lịch Sài Gòn (Saigontourist Group) đã tổ chức lễ chào mừng đoàn 50 du khách đường thủy đầu tiên tham ...</h6>  -->
+                            <img id="image" src="https://bantranh.com/wp-content/uploads/2022/04/20220420_122413-1-402x400.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img id="image" src="https://bantranh.com/wp-content/uploads/2022/04/92961F07-AF56-4874-A91C-B79CA4C6D10C-300x150.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img id="image" src="https://bantranh.com/wp-content/uploads/2021/10/tranh-phong-canh-dong-que.jpg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img id="image" src="https://bantranh.com/wp-content/uploads/2022/04/33-300x414.jpg" alt="">
+                        </div>
+                        <!-- slider img end -->
+                        <!--navigation start  -->
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+                        <!--navigation end  -->
+                        <!-- manual navigation start -->
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                        </div>
+                        <!-- manual navigation end -->
+                        <script type="text/javascript">
+                            var counter = 1;
+                            setInterval(function() {
+                                document.getElementById('radio' + counter).checked = true;
+                                counter++;
+                                if (counter > 4) {
+                                    counter = 1
+                                }
+                            }, 5000);
+                        </script>
+                    </div>
+                </div>
+
+
+
                 <div class="container-fluid">
+                    <!--  -->
 
                     <div class="row" id="product">
                         <div class="col-sm-12">
@@ -562,24 +466,20 @@
                         </div>
                     </div>
 
+                    <!-- Slides show end -->
 
-                    <!-- column -->
-                    <div class="row" id="hidden">
 
-                    </div>
+
                 </div>
-
 
                 <!-- Footer -->
                 <footer>
-                    <p>&copy; Bootadmin. All Rights Reserved. <br />Designed and Developed by <a href="https://sazzad.me">Sazzad Hossain</a>.</p>
+                    <!-- <p>&copy; Bootadmin. All Rights Reserved. <br />Designed and Developed by <a href="https://sazzad.me">Sazzad Hossain</a>.</p> -->
                 </footer>
 
             </main>
         </div>
     </div>
-
-
 
     <!-- Le Javascript -->
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>

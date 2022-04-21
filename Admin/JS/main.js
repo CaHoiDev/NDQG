@@ -12,7 +12,7 @@ function showProduct() {
         var row = "";
         for (let i = 0; i < res.data.length; i++) {
             row +=
-            `
+                `
                 <tr>
                     <td >
                         <div class="d-flex ali-item-center">
@@ -38,15 +38,17 @@ function showProduct() {
         document.getElementById("tbl").innerHTML = row
     })
 }
+
 function openModalUpdate(id) {
-        document.getElementById("update").setAttribute("onclick", `update(${id})`)
+    document.getElementById("update").setAttribute("onclick", `update(${id})`)
 }
-function addProduct(){
+
+function addProduct() {
     let imageString = "";
-    var file =document.getElementById('image')['files'][0];
+    var file = document.getElementById('image')['files'][0];
     var reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = function(){
+    reader.onload = function() {
         imageString = reader.result;
         var productName = document.getElementById('pictureName').value
         console.log(image);
@@ -57,34 +59,72 @@ function addProduct(){
             date: date
         }
         axios.post(APTconfirm, data)
-            .then((res) => {if (res.status == 201) console.log("Thêm thành công",imageString) ;{location.reload()}});
-        }
+            .then((res) => { if (res.status == 201) console.log("Thêm thành công", imageString); { location.reload() } });
+    }
 }
 
 function update(artID) {
     let imageString = "";
-    var file =document.getElementById('imgProductd')['files'][0];
+    var file = document.getElementById('imgProductd')['files'][0];
     var reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = function(){
+    reader.onload = function() {
         imageString = reader.result;
         var productName = document.getElementById('named').value
         var date1 = document.getElementById('dated').value
 
-    var data = {
-        artName: productName,
-        artImage: imageString,
-        date: date1
+        var data = {
+            artName: productName,
+            artImage: imageString,
+            date: date1
 
-    }
-    axios.put(`${APTconfirm}/${artID}`, data)
-        .then((res) => {if (res.status == 200) console.log("Thêm thành công",imageString) ;{location.reload()}});
+        }
+        axios.put(`${APTconfirm}/${artID}`, data)
+            .then((res) => { if (res.status == 200) console.log("Thêm thành công", imageString); { location.reload() } });
     }
 }
 
 function deleteproduct(artID) {
     axios.get(`${APTconfirm}/${artID}`)
-    axios.delete(`${APTconfirm}/${artID}`).then(() => { location.reload() }
-    )
+    axios.delete(`${APTconfirm}/${artID}`).then(() => { location.reload() })
 }
 showProduct()
+
+//----------------------searchfunction search() {
+function Search() {
+    alert("lỗi")
+    var Phuong = document.getElementById('scanner').value
+    alert(Phuong)
+    document.getElementById('tbl').innerHTML = "";
+    axios.get(`${APTconfirm}`).then(res => {
+        for (var i = 0; i < res.data.length; i++) {
+            alert(Phuong)
+            alert(document.getElementById('scanner').value)
+            if (res.data[i].artName == document.getElementById('scanner').value) {
+                stt++;
+                document.getElementById('tbl').innerHTML += `
+                <tr>
+                    <td >
+                        <div class="d-flex ali-item-center">
+                            <div class="m-r-10"><a class="btn btn-circle btn-primary text-white">QG</a></div>
+                            <div class="">
+                                <h4 class="m-b-0 font-16">${res.data[i].artName}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td><img style="width:70px;height:70px;" src="${res.data[i].artImage}" alt="Image product"></td>
+                    <td>${res.data[i].date}</td>
+                    <td class="edit_delete">
+                        <button class="btn btn-outline-primary" onclick="openModalUpdate(${res.data[i].artID})" data-toggle="modal" data-target="#Chinhsua">
+                            <i class="fas fa-cogs"></i>
+                        </button>
+                        <button class="btn btn-outline-success" onclick="deleteproduct(${res.data[i].artID})">
+                            <i class="edit fas fa-trash-alt" style="color: red;"></i>
+                        </button>
+                    </td>
+                </tr>
+            `
+            }
+        }
+    })
+}
