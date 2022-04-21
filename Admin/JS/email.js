@@ -21,8 +21,8 @@ function codeOTP() {
     const password = document.getElementById("mk").value;
 
     var otp = TaoSoNgauNhien(100000, 999999);
-    var subject = "[NDQG] Mã OTP";
-    var body = `hello: ${nameUser} <br> Mã OTP: ${otp}`;
+    var subject = "[NDQG] OTP code";
+    var body = `Dear : ${nameUser}<br> This is OTP code: ${otp}`;
     checkUser(nameUser, email, password, subject, body, otp)
 }
 // --- phần đăng nhập -----
@@ -38,7 +38,7 @@ function check() {
     const password = document.getElementById("mk").value;
 
     if (username == "" || email == "" || password == "") {
-        alert("Bạn phải nhập đầy đủ thông tin để đăng nhập");
+        alert("You must enter all the information to log in!");
     }
 }
 
@@ -50,14 +50,14 @@ function checkUser(nameUser, email, password, subject, body, otp) {
             if ((nameUser == myData[index].userName) && (password == myData[index].userPassword)) {
                 sendEmail(email, subject, body);
                 textTF = true;
-                alert("Vui lòng kiểm tra mã otp");
+                alert("Please check the OTP code");
                 checkOTP(otp);
             }
 
         }
         if (textTF == false) {
             resetRegister();
-            alert(" Kiểm tra lại tại khoản của bạn");
+            alert(" Check your account !!");
         }
 
     });
@@ -72,20 +72,21 @@ function resetRegister() {
 }
 
 function checkOTP(otp) {
-    var codeOTP = prompt("Nhập mã otp của bạn");
+    var codeOTP = prompt("Enter your OTP code");
     var count = 1;
 
     while (otp != codeOTP) {
         if (count == 5) {
-            alert("Bạn đã nhập mã otp quá 5 lần vui lòng kiểm tra lại.")
+            alert("You have entered the OTP code more than 5 times, please check to log in again.")
             break;
         }
         count++;
-        alert("đang nhẬP lẠI")
-        codeOTP = prompt("Nhập mã otp của bạn");
+        alert("You must log in again")
+        codeOTP = prompt("Enter your OTP code");
+        break;
     }
     if (count != 5) {
-        alert("Đang nhập thành công")
+        alert("login successful")
         window.location = "http://127.0.0.1:5501/pages/admin.html"
     }
 }
